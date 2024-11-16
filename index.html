@@ -7,40 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>Generate a <br><span>Random Password</span></h1>
-        <div class="display">
-            <input type="text" id="password" placeholder="Password">
-            <img src="images/copy.png">
+        <div class="todo-app">
+            <h2>To_Do List <img src="images/icon.png"></h2>
+            <div class="row">
+                <input type="text" placeholder="Enter your text here" id="input-box">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
         </div>
-        <button onclick="createPassword()"><img src="images/generate.png">Generate Text</button>
-
     </div>
-
-
-    <script>
-        const passwordBox = document.getElementById("password");
-        const length=12;
-
-        const uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const lowercase="abcdefghijklmnopqrstuvwxyz";
-        const number="0123456789";
-        const symbol="@#$%^&*()_+!{}[]:;/?.,<>";
-        const allChar=uppercase+lowercase+number+symbol;
-        function createPassword(){
-            let password="";
-            password+=uppercase[Math.floor(Math.random()*uppercase.length)];
-            password+=lowercase[Math.floor(Math.random()*lowercase.length)];
-            password+=number[Math.floor(Math.random()*number.length)];
-            password+=symbol[Math.floor(Math.random()*symbol.length)];
-
-            while(length > password.length){
-                password+=allChar[Math.floor(Math.random()*allChar.length)];
-
-            }
-            passwordBox.value=password;
-        }
-    </script>
+    <script src="script.js"></script>
     
 </body>
 </html>
